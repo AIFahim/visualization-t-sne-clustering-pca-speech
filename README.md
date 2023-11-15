@@ -65,32 +65,49 @@ This repository contains various Python scripts for processing, analyzing, and v
     - Iterating over DBSCAN parameters.
     - Calculating silhouette scores.
   - **Usage**: Run to find optimal DBSCAN parameters.
+  
+- `silhouette_score_elbow_plot.py`
+  - **Description**: Calculates silhouette scores for different numbers of clusters to find the optimal clustering configuration.
+  - **Key Functions**:
+    - Data loading and preprocessing.
+    - Iterating over different numbers of clusters.
+    - Calculating silhouette scores.
+    - Plotting silhouette scores against the number of clusters.
+  - **Usage**: Run to determine the optimal number of clusters.
 
-### Additional Scripts
-- `silhouette_score_gmm.py`
-  - **Description**: Evaluates silhouette scores for different GMM clustering configurations.
-  - **Usage**: Useful for determining the optimal number of clusters in GMM.
+- `wcss_score_clusters_plot.py`
+  - **Description**: Computes and plots the Within-Cluster Sum of Squares (WCSS) for different numbers of clusters.
+  - **Key Functions**:
+    - Data loading and preprocessing.
+    - PCA for dimensionality reduction.
+    - KMeans clustering with varying numbers of clusters.
+    - Plotting WCSS values.
+  - **Usage**: Useful for identifying the elbow point in clustering.
 
-- `silhouette_score_kmeans.py`
-  - **Description**: Calculates silhouette scores for various KMeans configurations.
-  - **Usage**: Assists in finding the best number of clusters for KMeans.
+### Different PCA Algorithm Implementations & Plots for Large Dataset
+- `pca_calculations_incrementalPCA.py`
+  - **Description**: Implements Incremental PCA for large datasets.
+  - **Key Functions**:
+    - Data loading and preprocessing.
+    - Incremental PCA for handling large datasets.
+    - Plotting PCA results.
+  - **Usage**: Suitable for datasets that are too large for standard PCA.
 
-- `spectrogram.py`
-  - **Description**: Generates spectrograms from audio files.
-  - **Usage**: Useful for visual analysis of audio frequency content.
+- `pca_calculations_parallel_process.py`
+  - **Description**: Parallelizes PCA calculations for efficiency.
+  - **Key Functions**:
+    - Data loading and preprocessing.
+    - Parallel processing for PCA.
+    - Plotting PCA results.
+  - **Usage**: Use when dealing with large datasets and aiming for faster computation.
 
-- `spectrogram_multiprocessing.py`
-  - **Description**: Similar to `spectrogram.py`, but uses multiprocessing for efficiency.
-  - **Usage**: Efficient for processing large sets of audio files.
+### Speech Geneva Features Calculation with OpenSMILE
+- `speech geneva features cal opensmile.py`
+  - **Description**: Extracts speech features using the OpenSMILE tool.
+  - **Key Functions**:
+    - Processing audio files to extract features.
+    - Handling multiple files with multiprocessing.
+    - Saving extracted features to a CSV file.
+  - **Usage**: Ideal for extracting complex speech features from audio files.
 
-- `tsne_cluster_plots.py`
-  - **Description**: Visualizes data in lower-dimensional space using t-SNE.
-  - **Usage**: Helps in understanding data distribution and clustering.
 
-- `tsne_pca_plot_with_dbscan.py`
-  - **Description**: Applies DBSCAN clustering on data reduced with t-SNE and PCA.
-  - **Usage**: Useful for visualizing complex data clusters.
-
-- `tsne_pca_plot_with_gmm.py`
-  - **Description**: Combines t-SNE and PCA for dimensionality reduction and applies GMM clustering.
-  - **Usage**: Effective for visualizing and analyzing speech data clusters.
